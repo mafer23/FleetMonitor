@@ -51,7 +51,6 @@ export default function DashboardPage() {
   const user = getUser();
   const admin = isAdmin();
 
-  // ── WebSocket: recibir actualizaciones en tiempo real ──
   const handleWSMessage = useCallback(
     (msg: { type: string; data: unknown }) => {
       if (msg.type === 'sensor_update') {
@@ -63,7 +62,6 @@ export default function DashboardPage() {
               : p
           )
         );
-        // Actualizar historial si es el vehículo seleccionado
         if (reading.vehicle_id === selectedVehicle) {
           setHistory((prev) => [reading, ...prev].slice(0, 50));
         }
@@ -76,8 +74,6 @@ export default function DashboardPage() {
   );
 
   const { connected: wsConnected } = useWebSocket(handleWSMessage);
-
-  // ── Cargar datos iniciales (online o caché) ───────────
   useEffect(() => {
     if (!getToken()) {
       router.replace('/login');
@@ -109,7 +105,6 @@ export default function DashboardPage() {
             await loadAlerts();
           }
         } else {
-          // Offline: cargar desde IndexedDB
           const cachedVehicles = await getCachedVehicles();
           const cachedReadings = await Promise.all(
             cachedVehicles.map(async (v) => {
@@ -134,8 +129,6 @@ export default function DashboardPage() {
     };
 
     loadData();
-
-    // Escuchar cambios de conexión
     const cleanup = onConnectionChange((isOn) => {
       setOnline(isOn);
       if (isOn) loadData(); // Re-fetch al volver online
@@ -143,7 +136,6 @@ export default function DashboardPage() {
     return cleanup;
   }, [router, admin]);
 
-  // ── Cargar historial cuando se selecciona un vehículo ──
   useEffect(() => {
     if (!selectedVehicle) {
       setHistory([]);
@@ -168,18 +160,15 @@ export default function DashboardPage() {
     loadHistory();
   }, [selectedVehicle]);
 
-  // ── Cargar alertas (solo admin) ────────────────────────
   const loadAlerts = async () => {
     try {
       const data = await getAlerts(false);
-      setAlerts(data);
+      setAlerts(data || []);
       await cacheAlerts(data);
     } catch (err) {
       console.error('Error cargando alertas:', err);
     }
   };
-
-  // ── Logout ─────────────────────────────────────────────
   const handleLogout = () => {
     clearAuth();
     router.replace('/login');
@@ -275,7 +264,8 @@ export default function DashboardPage() {
               <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-400">
                 Alertas predictivas
               </h2>
-              {alerts.length > 0 && (
+              {alerts && alerts.length > 0 && (
+
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
                   {alerts.length}
                 </span>

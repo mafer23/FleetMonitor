@@ -29,7 +29,8 @@ export default function AlertsPanel({ alerts, onAlertResolved }: AlertsPanelProp
     speeding: '💨',
   };
 
-  if (alerts.length === 0) {
+  if (!alerts || alerts.length === 0) {
+
     return (
       <div className="flex h-32 items-center justify-center rounded-xl border border-white/[0.06] bg-fleet-800">
         <p className="text-sm text-slate-500">Sin alertas activas</p>
