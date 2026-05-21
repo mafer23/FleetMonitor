@@ -1,9 +1,4 @@
 'use client';
-
-// ═══════════════════════════════════════════════════════
-// VehicleCards — Tarjetas resumen de vehículos
-// ═══════════════════════════════════════════════════════
-
 import { Vehicle, SensorReading } from '@/lib/api';
 
 interface VehiclePosition {

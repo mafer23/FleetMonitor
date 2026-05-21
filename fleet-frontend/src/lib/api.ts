@@ -1,10 +1,4 @@
-// ═══════════════════════════════════════════════════════
-// API CLIENT — Fetch wrapper con autenticación y offline
-// ═══════════════════════════════════════════════════════
-
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
-
-// ── Tipos ──────────────────────────────────────────────
 
 export interface User {
   id: number;
@@ -49,8 +43,6 @@ export interface LoginResponse {
   user: User;
 }
 
-// ── Token management ───────────────────────────────────
-
 export function getToken(): string | null {
   if (typeof window === 'undefined') return null;
   return localStorage.getItem('fleet_token');
@@ -76,8 +68,6 @@ export function isAdmin(): boolean {
   const user = getUser();
   return user?.role === 'admin';
 }
-
-// ── Fetch wrapper ──────────────────────────────────────
 
 async function apiFetch<T>(
   endpoint: string,
@@ -113,9 +103,6 @@ async function apiFetch<T>(
 
   return res.json();
 }
-
-// ── Endpoints ──────────────────────────────────────────
-
 export async function login(username: string, password: string): Promise<LoginResponse> {
   return apiFetch<LoginResponse>('/api/auth/login', {
     method: 'POST',

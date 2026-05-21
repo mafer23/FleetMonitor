@@ -1,13 +1,5 @@
-// ═══════════════════════════════════════════════════════
-// OFFLINE CACHE — IndexedDB para modo sin conexión
-// Usa la librería "idb" para una API async/await limpia
-// ═══════════════════════════════════════════════════════
-
 import { openDB, DBSchema, IDBPDatabase } from 'idb';
 import { Vehicle, SensorReading, Alert } from './api';
-
-// ── Schema de IndexedDB ────────────────────────────────
-
 interface FleetDB extends DBSchema {
   vehicles: {
     key: number;
@@ -32,8 +24,6 @@ const DB_NAME = 'fleet-offline';
 const DB_VERSION = 1;
 
 let dbPromise: Promise<IDBPDatabase<FleetDB>> | null = null;
-
-// ── Init ───────────────────────────────────────────────
 
 function getDB(): Promise<IDBPDatabase<FleetDB>> {
   if (!dbPromise) {
@@ -62,8 +52,6 @@ function getDB(): Promise<IDBPDatabase<FleetDB>> {
   return dbPromise;
 }
 
-// ── Vehículos ──────────────────────────────────────────
-
 export async function cacheVehicles(vehicles: Vehicle[]): Promise<void> {
   const db = await getDB();
   const tx = db.transaction('vehicles', 'readwrite');
@@ -79,8 +67,6 @@ export async function getCachedVehicles(): Promise<Vehicle[]> {
   return db.getAll('vehicles');
 }
 
-// ── Lecturas ───────────────────────────────────────────
-
 export async function cacheReadings(readings: SensorReading[]): Promise<void> {
   const db = await getDB();
   const tx = db.transaction('readings', 'readwrite');
@@ -94,8 +80,6 @@ export async function getCachedReadings(vehicleId: number): Promise<SensorReadin
   const db = await getDB();
   return db.getAllFromIndex('readings', 'by-vehicle', vehicleId);
 }
-
-// ── Alertas ────────────────────────────────────────────
 
 export async function cacheAlerts(alerts: Alert[]): Promise<void> {
   const db = await getDB();
@@ -111,8 +95,6 @@ export async function getCachedAlerts(): Promise<Alert[]> {
   return db.getAll('alerts');
 }
 
-// ── Meta helpers ───────────────────────────────────────
-
 async function setMeta(key: string, data: unknown): Promise<void> {
   const db = await getDB();
   await db.put('meta', { key, timestamp: Date.now(), data });
@@ -123,8 +105,6 @@ export async function getMetaTimestamp(key: string): Promise<number | null> {
   const meta = await db.get('meta', key);
   return meta?.timestamp ?? null;
 }
-
-// ── Online/Offline detector ────────────────────────────
 
 export function isOnline(): boolean {
   return typeof navigator !== 'undefined' ? navigator.onLine : true;

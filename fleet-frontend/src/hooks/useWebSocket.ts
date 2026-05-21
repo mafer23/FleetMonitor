@@ -1,7 +1,3 @@
-// ═══════════════════════════════════════════════════════
-// useWebSocket — Hook para recibir datos en tiempo real
-// ═══════════════════════════════════════════════════════
-
 'use client';
 
 import { useEffect, useRef, useCallback, useState } from 'react';
