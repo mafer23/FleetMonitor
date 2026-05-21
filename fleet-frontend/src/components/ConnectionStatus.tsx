@@ -1,17 +1,12 @@
 'use client';
 
-// ═══════════════════════════════════════════════════════
-// ConnectionStatus — Indicador de estado online/offline
-// ═══════════════════════════════════════════════════════
-
 interface ConnectionStatusProps {
   online: boolean;
   wsConnected: boolean;
 }
 
 export default function ConnectionStatus({ online, wsConnected }: ConnectionStatusProps) {
-  if (online && wsConnected) return null; // Todo bien, no mostrar nada
-
+  if (online && wsConnected) return null; 
   return (
     <div
       className={`fixed bottom-4 right-4 z-50 flex items-center gap-2 rounded-lg px-4 py-2 text-xs font-medium shadow-lg backdrop-blur-sm ${

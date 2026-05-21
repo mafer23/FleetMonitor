@@ -1,9 +1,5 @@
 'use client';
 
-// ═══════════════════════════════════════════════════════
-// AlertsPanel — Panel de alertas predictivas (solo admin)
-// ═══════════════════════════════════════════════════════
-
 import { Alert, resolveAlert } from '@/lib/api';
 import { useState } from 'react';
 

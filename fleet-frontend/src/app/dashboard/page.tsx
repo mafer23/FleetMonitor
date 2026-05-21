@@ -1,10 +1,4 @@
 'use client';
-
-// ═══════════════════════════════════════════════════════════
-// Dashboard — Página principal del sistema Fleet Monitor
-// Orquesta: Mapa, Gráficos, Alertas, WebSocket y Offline
-// ═══════════════════════════════════════════════════════════
-
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';

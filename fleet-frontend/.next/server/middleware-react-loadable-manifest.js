@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"app\\\\dashboard\\\\page.tsx -> @/components/FleetMap\":{\"id\":\"app\\\\dashboard\\\\page.tsx -> @/components/FleetMap\",\"files\":[\"static/css/_app-pages-browser_src_components_FleetMap_tsx.css\",\"static/chunks/_app-pages-browser_src_components_FleetMap_tsx.js\"]}}"

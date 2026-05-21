@@ -1,9 +1,4 @@
 'use client';
-
-// ═══════════════════════════════════════════════════════
-// HistoryCharts — Gráficos históricos de velocidad y combustible
-// ═══════════════════════════════════════════════════════
-
 import {
   LineChart,
   Line,
@@ -23,8 +18,7 @@ interface HistoryChartsProps {
 }
 
 export default function HistoryCharts({ readings, vehicleName }: HistoryChartsProps) {
-  // Invertir para mostrar cronológicamente (más antiguo primero)
-  const data = [...readings].reverse().map((r) => ({
+    const data = [...readings].reverse().map((r) => ({
     time: new Date(r.recorded_at).toLocaleTimeString('es', {
       hour: '2-digit',
       minute: '2-digit',
