@@ -1,11 +1,6 @@
 # 🚛 Fleet Monitor — Sistema IoT de Monitoreo Vehicular
  
 <div align="center">
-![Go](https://img.shields.io/badge/Go-1.22-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![React Native](https://img.shields.io/badge/React_Native-Expo_54-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![WebSocket](https://img.shields.io/badge/WebSocket-Real_Time-FF6F00?style=for-the-badge)
  
 **Sistema full-stack de monitoreo en tiempo real para flotas vehiculares con alertas predictivas de combustible, mapa interactivo y soporte offline.**
  
