@@ -183,7 +183,7 @@ fleet-frontend/
 | Tecnología | Uso |
 |------------|-----|
 | React Native | Framework mobile |
-| Expo SDK 54 | Toolchain y build |
+| Expo SDK 51 | Toolchain y build |
 | Zustand | Estado global |
 | AsyncStorage | Cache offline |
 | expo-notifications | Push notifications |
