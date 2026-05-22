@@ -1,7 +1,6 @@
 # 🚛 Fleet Monitor — Sistema IoT de Monitoreo Vehicular
  
 <div align="center">
- <h1>Video Explicativo: </h1>  https://canva.link/ye3x0sbc6j8xtip
 
  <img width="540" height="506" alt="image" src="https://github.com/user-attachments/assets/441afa77-b36a-44d1-af7f-32aef35b2a4e" />
 <img width="1081" height="598" alt="image" src="https://github.com/user-attachments/assets/3e5f0a6e-b0be-467f-95fa-de842d6ddca4" />
@@ -14,7 +13,9 @@
 **Sistema full-stack de monitoreo en tiempo real para flotas vehiculares con alertas predictivas de combustible, mapa interactivo y soporte offline.**
  
 [Backend](#-backend-go) · [Frontend](#-frontend-nextjs) · [Mobile](#-mobile-react-native) · [Demo](#-ejecución-rápida) · [Arquitectura](#-arquitectura)
- 
+
+  <h1>Video Explicativo: </h1>  https://canva.link/ye3x0sbc6j8xtip
+
 </div>
 ---
  
