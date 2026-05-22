@@ -87,11 +87,7 @@ Fleet Monitor es una plataforma IoT que permite monitorear vehículos de una flo
 | `POST` | `/api/auth/login` | Autenticación → devuelve JWT | Público |
 | `GET` | `/api/vehicles` | Listar vehículos | Auth |
 | `POST` | `/api/sensors` | Ingestar lectura de sensor | Auth |
-| `GET` | `/api/vehicles/:id/latest` | Última lectura de un vehículo | Auth |
-| `GET` | `/api/vehicles/:id/history` | Historial de lecturas | Auth |
 | `GET` | `/api/alerts` | Alertas activas | Solo Admin |
-| `PUT` | `/api/alerts/:id/resolve` | Resolver una alerta | Solo Admin |
-| `WS` | `/ws?token=JWT` | WebSocket tiempo real | Auth |
  
 ### JWT Manual
  
