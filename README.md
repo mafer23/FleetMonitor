@@ -1,7 +1,16 @@
 # 🚛 Fleet Monitor — Sistema IoT de Monitoreo Vehicular
  
 <div align="center">
- 
+ <h1>Video Explicativo: </h1>  https://canva.link/ye3x0sbc6j8xtip
+
+ <img width="540" height="506" alt="image" src="https://github.com/user-attachments/assets/441afa77-b36a-44d1-af7f-32aef35b2a4e" />
+<img width="1081" height="598" alt="image" src="https://github.com/user-attachments/assets/3e5f0a6e-b0be-467f-95fa-de842d6ddca4" />
+<img width="1046" height="586" alt="image" src="https://github.com/user-attachments/assets/367df70f-a6b4-485b-b2c8-9b08abf207db" />
+<img width="1052" height="576" alt="image" src="https://github.com/user-attachments/assets/d9ec692c-dfa6-4076-966f-615e7bcbfbb8" />
+<img width="1200" height="599" alt="image" src="https://github.com/user-attachments/assets/ea4fd8af-c3aa-4fd0-b8a6-d9781799ca4e" />
+<img width="267" height="524" alt="image" src="https://github.com/user-attachments/assets/5ebc653d-405b-47e1-9f6a-d22eff5fd5ab" />
+
+
 **Sistema full-stack de monitoreo en tiempo real para flotas vehiculares con alertas predictivas de combustible, mapa interactivo y soporte offline.**
  
 [Backend](#-backend-go) · [Frontend](#-frontend-nextjs) · [Mobile](#-mobile-react-native) · [Demo](#-ejecución-rápida) · [Arquitectura](#-arquitectura)
@@ -303,7 +312,3 @@ fleet-monitor/
  
 ---
  
-<div align="center">
-Desarrollado para la prueba técnica de **Simon Movilidad**
- 
-</div>
